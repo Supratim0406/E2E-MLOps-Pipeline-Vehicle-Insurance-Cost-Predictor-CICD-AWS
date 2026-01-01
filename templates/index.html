@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Insurance Prediction</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 py-10">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-10">
+
+        <h1 class="text-4xl font-bold text-center text-blue-600 mb-10">
+            Vehicle Insurance Prediction
+        </h1>
+
+        <!-- Prediction Form -->
+        <form method="post" action="/" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Left Side -->
+            <div class="flex flex-col space-y-4">
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Gender (1: Male, 0: Female)</label>
+                    <input type="number" id="Gender" name="Gender" min="0" max="1" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Age</label>
+                    <input type="number" id="Age" name="Age" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Driving License (0: No, 1: Yes)</label>
+                    <input type="number" id="Driving_License" name="Driving_License" min="0" max="1" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Region Code</label>
+                    <input type="number" step="0.01" id="Region_Code" name="Region_Code" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Previously Insured (0: No, 1: Yes)</label>
+                    <input type="number" id="Previously_Insured" name="Previously_Insured" min="0" max="1" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex flex-col space-y-4">
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Annual Premium</label>
+                    <input type="number" step="0.01" id="Annual_Premium" name="Annual_Premium" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Policy Sales Channel</label>
+                    <input type="number" step="0.01" id="Policy_Sales_Channel" name="Policy_Sales_Channel" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Vintage</label>
+                    <input type="number" id="Vintage" name="Vintage" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Vehicle Age &lt; 1 Year (0: No, 1: Yes)</label>
+                    <input type="number" id="Vehicle_Age_lt_1_Year" name="Vehicle_Age_lt_1_Year" min="0" max="1" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Vehicle Age &gt; 2 Years (0: No, 1: Yes)</label>
+                    <input type="number" id="Vehicle_Age_gt_2_Years" name="Vehicle_Age_gt_2_Years" min="0" max="1" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Vehicle Damage (0: No, 1: Yes)</label>
+                    <input type="number" id="Vehicle_Damage_Yes" name="Vehicle_Damage_Yes" min="0" max="1" required
+                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+
+            <!-- Submit Button spans full width -->
+            <button type="submit"
+                class="col-span-1 md:col-span-2 bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                Predict
+            </button>
+        </form>
+
+        <!-- Train Model -->
+        <form method="get" action="/train" class="mt-6">
+            <button type="submit"
+                class="w-full bg-green-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition">
+                Train Model
+            </button>
+        </form>
+
+        <!-- Display Prediction -->
+        {% if context %}
+        <div class="mt-8 bg-blue-100 border border-blue-400 text-blue-800 rounded-lg p-6 text-center font-semibold text-xl">
+            Result: {{ context }}
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>
