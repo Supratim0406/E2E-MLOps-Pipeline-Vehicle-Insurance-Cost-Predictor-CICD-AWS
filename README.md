@@ -193,6 +193,8 @@ MLOps-Project-Vehicle-Insurance/
 1. Open the 5080 port on the EC2 instance.
 2. Access the deployed app by visiting `http://<public_ip>:5080`.
 
+<img width="1516" height="862" alt="image" src="https://github.com/user-attachments/assets/5a16a07f-b76d-4f61-98d5-3ba43a42620f" />
+
 ### Demo video: 
 [Demo Video](https://github.com/user-attachments/assets/75437085-4e38-4fde-b8f7-09d8d2aa3e41)
 
