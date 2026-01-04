@@ -6,6 +6,66 @@ Welcome to this MLOps project, designed to demonstrate a robust pipeline for man
 
 ## 📁 Project Setup and Structure
 
+```
+MLOps-Project-Vehicle-Insurance/
+│
+├── .github/                      # GitHub configurations (CI/CD workflows, templates)
+├── .vscode/                      # VS Code workspace settings
+│
+├── artifact/                     # Generated artifacts from pipeline runs
+│   └── data_ingestion/
+│       └── ingested/
+│           └── test.csv          # Ingested dataset (post data ingestion stage)
+│
+├── config/                       # Centralized configuration files
+│   ├── model.yaml                # Model training configuration & hyperparameters
+│   └── schema.yaml               # Data schema validation
+│
+├── logs/                         # Application and pipeline logs
+│
+├── notebook/                     # Jupyter notebooks for EDA & experimentation
+│
+├── src/                          # Core source code (Production-grade)
+│   ├── cloud_storage/            # Cloud storage integration (S3 / artifact store)
+│   ├── components/               # Modular ML pipeline components
+│   │   ├── data_ingestion.py
+│   │   ├── data_validation.py
+│   │   ├── data_transformation.py
+│   │   ├── model_trainer.py
+│   │   └── model_evaluation.py
+│   │
+│   ├── configuration/            # Configuration managers
+│   ├── constants/                # Global constants
+│   ├── data_access/              # Data access layer
+│   ├── entity/                   # Pydantic / dataclass entities
+│   ├── exception/                # Custom exception handling
+│   ├── logger/                   # Centralized logging setup
+│   ├── pipeline/                 # End-to-end training & prediction pipelines
+│   ├── templates/                # HTML templates (if UI is used)
+│   └── utils/                    # Utility & helper functions
+│
+├── static/                       # Static files (CSS, JS, images)
+├── templates/                    # Frontend HTML templates
+│   └── index.html
+│
+├── vehicle/                      # Packaged Python module
+│
+├── app.py                        # Application entry point (FastAPI / Flask)
+├── demo.py                       # Demo / local testing script
+│
+├── Dockerfile                    # Docker image definition
+├── .dockerignore                 # Docker ignore rules
+│
+├── requirements.txt              # Python dependencies
+├── setup.py                      # Package setup file
+├── pyproject.toml                # Build system configuration
+├── projectflow.txt               # Project workflow documentation
+├── crashcourse.txt               # Learning notes / references
+├── LICENSE                       # License information
+└── README.md                     # Project documentation
+
+```
+
 ### Step 1: Project Template
 - Start by executing the `template.py` file to create the initial project template, which includes the required folder structure and placeholder files.
 
